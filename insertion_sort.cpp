@@ -11,18 +11,13 @@ void swap(int *a, int *b){
     *b = temp;
 }
 
-int* selection_sort(int arr[], int n)
-{
-    for(int i=0;i<n;i++){
-        int min=arr[i];
-        int index=i;
-        for(int j=i+1;j<n;j++){
-            if(arr[j]<min){
-                min=arr[j];
-                index=j;
+int* insertion_sort(int arr[], int n){
+    for(int i=0;i<n;i++) {
+        for (int j = i; j > 0; j--) {
+            if (arr[j] < arr[j - 1]) {
+                swap(&arr[j], &arr[j - 1]);
             }
         }
-        swap(&arr[i],&arr[index]);
     }
     return arr;
 }
@@ -30,7 +25,7 @@ int* selection_sort(int arr[], int n)
 int main(){
     int arr[] = {23,11,9,29,2,14,18};
     int n = sizeof(arr)/sizeof(arr[0]);
-    int *sorted_array = selection_sort(arr, n);
+    int* sorted_array = insertion_sort(arr, n);
     for(int i=0;i<n;i++){
         cout<<sorted_array[i]<<" ";
     }
