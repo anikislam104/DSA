@@ -44,3 +44,9 @@ int main(){
     }
     return 0;
 }
+
+//Time complexity: O(nlogn)
+//Space complexity: O(logn)
+//Average case: O(nlogn)
+//Worst case: O(n^2)
+//Worst Space complexity: O(n)
