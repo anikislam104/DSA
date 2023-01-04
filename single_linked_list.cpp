@@ -23,6 +23,8 @@ Node* create_node(int data){
     new_node->data = data;
     new_node->next = nullptr;
     return new_node;
+    //time complexity: O(1)
+    //space complexity: O(1)
 }
 
 LinkedList* create_list(Node** nodes,int* data, int n){
@@ -35,11 +37,15 @@ LinkedList* create_list(Node** nodes,int* data, int n){
     LinkedList* list = new LinkedList();
     list->start = nodes[0];
     return list;
+    //time complexity: O(n)
+    //space complexity: O(n)
 }
 
 void insert_node_at_the_beginning(Node* newNode, LinkedList* list){
     newNode->next = list->start;
     list->start = newNode;
+    //time complexity: O(1)
+    //space complexity: O(1)
 }
 
 void insert_node_at_the_end(Node* newNode, LinkedList* list){
@@ -48,6 +54,8 @@ void insert_node_at_the_end(Node* newNode, LinkedList* list){
         temp = temp->next;
     }
     temp->next = newNode;
+    //time complexity: O(n)
+    //space complexity: O(1)
 }
 
 void insert_node_at_the_middle(Node* newNode, LinkedList* list, int position){
@@ -57,12 +65,16 @@ void insert_node_at_the_middle(Node* newNode, LinkedList* list, int position){
     }
     newNode->next = temp->next;
     temp->next = newNode;
+    //time complexity: O(n)
+    //space complexity: O(1)
 }
 
 void delete_node_at_the_beginning(LinkedList* list){
     Node* temp = list->start;
     list->start = list->start->next;
     delete temp;
+    //time complexity: O(1)
+    //space complexity: O(1)
 }
 
 void delete_node_at_the_end(LinkedList* list){
@@ -72,6 +84,8 @@ void delete_node_at_the_end(LinkedList* list){
     }
     delete temp->next;
     temp->next = nullptr;
+    //time complexity: O(n)
+    //space complexity: O(1)
 }
 
 void delete_node_at_the_middle(LinkedList* list, int position){
@@ -82,6 +96,8 @@ void delete_node_at_the_middle(LinkedList* list, int position){
     Node* temp2 = temp->next;
     temp->next = temp->next->next;
     delete temp2;
+    //time complexity: O(n)
+    //space complexity: O(1)
 }
 
 void print_list(LinkedList* list){
@@ -90,6 +106,8 @@ void print_list(LinkedList* list){
         cout<<temp->data<<" ";
         temp = temp->next;
     }
+    //time complexity: O(n)
+    //space complexity: O(1)
 }
 
 int count_the_number_of_nodes(Node* start){
@@ -99,6 +117,8 @@ int count_the_number_of_nodes(Node* start){
     else{
         return 1+count_the_number_of_nodes(start->next);
     }
+    //time complexity: O(n)
+    //space complexity: O(n)
 }
 
 int main(){
